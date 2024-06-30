@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Polyline {
+class Polyline implements Measurable {
     protected List<Point> points;
 
     // Конструктор без параметров, который инициализирует пустой список точек

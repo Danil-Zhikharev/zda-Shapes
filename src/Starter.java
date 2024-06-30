@@ -2,7 +2,7 @@ import java.sql.SQLOutput;
 import java.util.List;
 
 public class Starter {
-    // Задача 3.2.4
+    // Задачи 3.2.4, 3.3.3, 3.3.5
 
     public static void main(String[] args) {
         try {
@@ -63,5 +63,28 @@ public class Starter {
             System.out.println("Ошибка: " + e.getMessage());
         }
 
+        // Вычисление общей общей площади всех объектов
+        List<Shape> shapes = List.of(
+                new Circle(new Point(0, 0), 5),
+                new Circle(new Point(2, 2), 3),
+                new Square(new Point(1, 1), 10),
+                new Square(new Point(3, 3), 7)
+        );
+
+        double totalArea = ShapeUtils.calculateTotalArea(shapes);
+        System.out.println("Общая площадь фигур: " + totalArea);
+
+        // Вычисление общей длины всех объектов
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(-3, 4);
+        Point p3 = new Point(6, 8);
+
+        Line line = new Line(p1, p2);
+        Polyline polyline = new Polyline(p1, p2, p3);
+
+        List<Measurable> measurables = List.of(line, polyline);
+
+        double totalLength =  MeasurementUtils.calculateTotalLength(measurables);
+        System.out.println("Общая длина измеряемых объектов: " + totalLength);
     }
 }

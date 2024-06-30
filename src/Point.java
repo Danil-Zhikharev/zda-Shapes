@@ -43,4 +43,8 @@ class Point {
         int dy = this.y - other.y;
         return Math.sqrt(dx * dx + dy * dy);
     }
+
+    interface Measurable {
+        double getLength();
+    }
 }
